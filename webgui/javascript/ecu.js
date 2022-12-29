@@ -49,7 +49,7 @@ function publishParameters(save)
     var pub = new ROSLIB.Topic({
       ros : ros,
       name : '/ecu_params',
-      messageType : 'ecu/runtimeparameters'
+      messageType : 'ecu/msg/runtimeparameters'
     });
 
     
@@ -82,7 +82,7 @@ function button_load_onclick()
   var request = new ROSLIB.Topic({
     ros: ros,
     name: 'ecu_params_request',
-    messageType: 'std_msgs/Bool'
+    messageType: 'std_msgs/msg/Bool'
   });
 
   var rq = new ROSLIB.Message({

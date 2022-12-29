@@ -13,13 +13,13 @@ class Joydrive
         this.cmdVel = new ROSLIB.Topic({
             ros : ros,
             name : '/cmd_vel',
-            messageType : 'geometry_msgs/Twist'
+            messageType : 'geometry_msgs/msg/Twist'
         });
 
         this.shitter = new ROSLIB.Topic({
             ros : ros,
             name : '/shit_ball',
-            messageType : 'std_msgs/UInt32'
+            messageType : 'std_msgs/msg/UInt32'
         });
     }
 

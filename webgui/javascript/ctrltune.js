@@ -18,25 +18,25 @@ class CtrlTune
         this.enableCtrl = new ROSLIB.Topic({
             ros : ros,
             name : '/enable_rpmctrl',
-            messageType : 'std_msgs/Bool'
+            messageType : 'std_msgs/msg/Bool'
         });
         
         this.rpmRequest = new ROSLIB.Topic({
             ros : ros,
             name : '/rpm_request',
-            messageType : 'std_msgs/UInt16MultiArray'
+            messageType : 'std_msgs/msg/UInt16MultiArray'
         });
         
         this.torqueRequest = new ROSLIB.Topic({
             ros : ros,
             name : '/torque_request',
-            messageType : 'std_msgs/UInt16MultiArray'
+            messageType : 'std_msgs/msg/UInt16MultiArray'
         });
 
         this.cmdVel = new ROSLIB.Topic({
             ros : ros,
             name : '/cmd_vel',
-            messageType : 'geometry_msgs/Twist'
+            messageType : 'geometry_msgs/msg/Twist'
         });
     }
 

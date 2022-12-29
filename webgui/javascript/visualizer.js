@@ -69,12 +69,12 @@ class Visualizer
         console.log(message);
         switch(type)
         {
-            case "sensor_msgs/LaserScan": this.showLaserScan(name, type, message); break;
-            case "diagnostic_msgs/DiagnosticStatus": this.showDiagnosticStatus(name, type, message); break;
+            case "sensor_msgs/msg/LaserScan": this.showLaserScan(name, type, message); break;
+            case "diagnostic_msgs/msg/DiagnosticStatus": this.showDiagnosticStatus(name, type, message); break;
             case "msgs/filteroutput": this.showFilter(name, type, message); break;
             //case "sensor_msgs/Image": this.showImage(name, type, message); break;
-            case "sensor_msgs/CompressedImage": this.showCompressedImage(name, type, message); break;
-      	    case "std_msgs/UInt16MultiArray": 
+            case "sensor_msgs/msg/CompressedImage": this.showCompressedImage(name, type, message); break;
+      	    case "std_msgs/msg/UInt16MultiArray": 
         			if(name.includes("/rpm_record"))
         			{
         				this.showRPMRecord(name, type, message);
@@ -88,7 +88,7 @@ class Visualizer
         				this.showNotImplemented(name, type, message);
         			}
 		          break;
-            case "std_msgs/Int16MultiArray":
+            case "std_msgs/msg/Int16MultiArray":
               if(name.includes("/heading_record"))
               {
                 this.showHeadingRecord(name, type, message);
@@ -98,7 +98,7 @@ class Visualizer
                 this.showNotImplemented(name, type, message);
               }
               break;
-            case "std_msgs/Float64MultiArray":
+            case "std_msgs/msg/Float64MultiArray":
               if(this.osm)
               {
                 if("/route" == name)
@@ -108,17 +108,17 @@ class Visualizer
                 }
               }
               break;
-            case "std_msgs/Int8": this.showInt(name, type, message); break;
-            case "std_msgs/Int16": this.showInt(name, type, message); break;
-            case "std_msgs/Int32": this.showInt(name, type, message); break;
-            case "std_msgs/Int64": this.showInt(name, type, message); break;
-            case "std_msgs/UInt8": this.showInt(name, type, message); break;
-            case "std_msgs/UInt16": this.showInt(name, type, message); break;
-            case "std_msgs/UInt32": this.showInt(name, type, message); break;
-            case "std_msgs/UInt64": this.showInt(name, type, message); break;
-            case "std_msgs/Float32": this.showInt(name, type, message); break;
-            case "std_msgs/Float64": this.showInt(name, type, message); break;
-            case "sensor_msgs/NavSatFix": 
+            case "std_msgs/msg/Int8": this.showInt(name, type, message); break;
+            case "std_msgs/msg/Int16": this.showInt(name, type, message); break;
+            case "std_msgs/msg/Int32": this.showInt(name, type, message); break;
+            case "std_msgs/msg/Int64": this.showInt(name, type, message); break;
+            case "std_msgs/msg/UInt8": this.showInt(name, type, message); break;
+            case "std_msgs/msg/UInt16": this.showInt(name, type, message); break;
+            case "std_msgs/msg/UInt32": this.showInt(name, type, message); break;
+            case "std_msgs/msg/UInt64": this.showInt(name, type, message); break;
+            case "std_msgs/msg/Float32": this.showInt(name, type, message); break;
+            case "std_msgs/msg/Float64": this.showInt(name, type, message); break;
+            case "sensor_msgs/msg/NavSatFix": 
               if(this.osm)
               {
                 if(/*"/gps_data"*/"/ublox_gps/fix" == name)
@@ -133,9 +133,9 @@ class Visualizer
               }
               break;
             
-            case "geometry_msgs/Twist": this.showTwist(name, type, message); break;
+            case "geometry_msgs/msg/Twist": this.showTwist(name, type, message); break;
   
-            case "nav_msgs/Odometry":
+            case "nav_msgs/msg/Odometry":
               if(!this.odometry && !this.map)
               {
                   this.showOdometry(name, type, message); 
@@ -162,7 +162,7 @@ class Visualizer
                 this.showOdomInGrid(name, type, message); 
               }
               break;
-            case "nav_msgs/OccupancyGrid": 
+            case "nav_msgs/msg/OccupancyGrid": 
               this.showGrid(name, type, message); break;
             default: this.showNotImplemented(name, type, message); break;
         }

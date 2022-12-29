@@ -5,7 +5,7 @@ class HeadingTune
     this.headingRequest = new ROSLIB.Topic({
       ros: ros,
       name : '/heading_request',
-      messageType: 'std_msgs/UInt32'
+      messageType: 'std_msgs/msg/UInt32'
     });
   }
 

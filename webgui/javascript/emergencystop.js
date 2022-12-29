@@ -7,13 +7,13 @@ class EmergencyStop
         this.emListener = new ROSLIB.Topic({
             ros : ros,
             name : '/emergency_stop',
-            messageType : 'diagnostic_msgs/DiagnosticStatus'
+            messageType : 'diagnostic_msgs/msg/DiagnosticStatus'
         });
         this.subscribe();
         this.emPublisher = new ROSLIB.Topic({
             ros : ros,
             name : '/emergency_stop',
-            messageType : 'diagnostic_msgs/DiagnosticStatus'
+            messageType : 'diagnostic_msgs/msg/DiagnosticStatus'
         });
     }
     

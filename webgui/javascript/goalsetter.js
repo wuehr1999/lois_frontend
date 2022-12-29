@@ -8,7 +8,7 @@ class GoalSetter
     this.actionClient = new ROSLIB.ActionClient({
       ros : ros,
       serverName : '/move_base',
-      actionName : 'move_base_msgs/MoveBaseAction'
+      actionName : 'move_base_msgs/msg/MoveBaseAction'
     });
 
     this.send = false;
@@ -20,7 +20,7 @@ class GoalSetter
     var listener = new ROSLIB.Topic({
       ros : ros,
       name : '/odom_slam', 
-      messageType : 'nav_msgs/Odometry'
+      messageType : 'nav_msgs/msg/Odometry'
     });
     
     listener.subscribe(function(message) {
@@ -35,7 +35,7 @@ class GoalSetter
     var listenerKVH = new ROSLIB.Topic({
       ros : ros,
       name : '/kvh_heading',
-      messageType : 'std_msgs/Int32'
+      messageType : 'std_msgs/msg/Int32'
     });
 
     listenerKVH.subscribe(function(message) {
@@ -45,7 +45,7 @@ class GoalSetter
     this.globalGoal = new ROSLIB.Topic({
       ros : ros,
       name : '/globalgoal',
-      messageType : 'msgs/loisgoal'
+      messageType : 'msgs/msg/loisgoal'
      });
   }
 
