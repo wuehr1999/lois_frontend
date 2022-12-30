@@ -14,7 +14,7 @@ function init()
     var listener = new ROSLIB.Topic({
       ros : ros,
       name : '/ecu_params',
-      messageType : 'ecu/runtimeparameters'
+      messageType : 'lois_ecu/msg/RuntimeParameters'
     });
    
     listener.subscribe(function(message) {
@@ -49,7 +49,7 @@ function publishParameters(save)
     var pub = new ROSLIB.Topic({
       ros : ros,
       name : '/ecu_params',
-      messageType : 'ecu/msg/runtimeparameters'
+      messageType : 'lois_ecu/msg/RuntimeParameters'
     });
 
     
