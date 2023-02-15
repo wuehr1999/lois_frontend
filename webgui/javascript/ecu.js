@@ -23,9 +23,11 @@ function init()
       console.log(`Received message on  ${listener.name}: ${JSON.stringify(message)}`);
       document.getElementById("terminal_mode").value = message["terminal_mode"]["data"];
       document.getElementById("rpmctrl_enable").value = message["rpmctrl_enable"]["data"];
+      document.getElementById("ka_left").value = message["ka_left"]["data"];
       document.getElementById("kp_left").value = message["kp_left"]["data"];
       document.getElementById("tn_left").value = message["tn_left"]["data"];
       document.getElementById("td_left").value = message["td_left"]["data"];
+      document.getElementById("ka_right").value = message["ka_right"]["data"];
       document.getElementById("kp_right").value = message["kp_right"]["data"];
       document.getElementById("tn_right").value = message["tn_right"]["data"];
       document.getElementById("td_right").value = message["td_right"]["data"];
@@ -55,9 +57,11 @@ function publishParameters(save)
     
     parameterMsg["terminal_mode"]["data"] = parseInt(document.getElementById("terminal_mode").value);
     parameterMsg["rpmctrl_enable"]["data"] = parseInt(document.getElementById("rpmctrl_enable").value);
+    parameterMsg["ka_left"]["data"] = parseFloat(document.getElementById("ka_left").value);
     parameterMsg["kp_left"]["data"] = parseFloat(document.getElementById("kp_left").value);
     parameterMsg["tn_left"]["data"] = parseFloat(document.getElementById("tn_left").value);
     parameterMsg["td_left"]["data"] = parseFloat(document.getElementById("td_left").value);
+    parameterMsg["ka_right"]["data"] = parseFloat(document.getElementById("ka_right").value);
     parameterMsg["kp_right"]["data"] = parseFloat(document.getElementById("kp_right").value);
     parameterMsg["tn_right"]["data"] = parseFloat(document.getElementById("tn_right").value);
     parameterMsg["td_right"]["data"] = parseFloat(document.getElementById("td_right").value);
