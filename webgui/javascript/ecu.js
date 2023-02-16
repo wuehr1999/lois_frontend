@@ -23,6 +23,7 @@ function init()
       console.log(`Received message on  ${listener.name}: ${JSON.stringify(message)}`);
       document.getElementById("terminal_mode").value = message["terminal_mode"]["data"];
       document.getElementById("rpmctrl_enable").value = message["rpmctrl_enable"]["data"];
+      document.getElementById("rpm_lowpass").value = message["rpm_lowpass"]["data"];
       document.getElementById("ka_left").value = message["ka_left"]["data"];
       document.getElementById("kp_left").value = message["kp_left"]["data"];
       document.getElementById("tn_left").value = message["tn_left"]["data"];
@@ -57,6 +58,7 @@ function publishParameters(save)
     
     parameterMsg["terminal_mode"]["data"] = parseInt(document.getElementById("terminal_mode").value);
     parameterMsg["rpmctrl_enable"]["data"] = parseInt(document.getElementById("rpmctrl_enable").value);
+    parameterMsg["rpm_lowpass"]["data"] = parseFloat(document.getElementById("rpm_lowpass").value);
     parameterMsg["ka_left"]["data"] = parseFloat(document.getElementById("ka_left").value);
     parameterMsg["kp_left"]["data"] = parseFloat(document.getElementById("kp_left").value);
     parameterMsg["tn_left"]["data"] = parseFloat(document.getElementById("tn_left").value);
